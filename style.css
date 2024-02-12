@@ -1,0 +1,86 @@
+.container {
+    display: flex; /* Continues to use Flexbox for the layout */
+    flex-direction: row; /* Ensures items are laid out in a row */
+    justify-content: center; /* Centers the items in the container */
+    align-items: flex-start; /* Aligns items to the start of the cross axis */
+    gap: 5px; /* Adds space between the two main areas */
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#pitchLogger {
+    order: 1; /* Ensures that pitchLogger appears on the left */
+    flex: 1; /* Allows this area to grow and use available space, adjust as needed */
+}
+
+#chartsArea {
+    order: 2; /* Ensures that chartsArea appears on the right */
+    flex: 1; /* Allows this area to grow and use available space, adjust as needed */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Keeps the 2-column layout for charts */
+    gap: 10px; /* Space between charts */
+}
+
+.chart {
+    border: 1px solid #ddd;
+    padding: 4px;
+    background-color: #f9f9f9;
+    /* Adjust the chart sizing as per the container's size */
+    min-height: 200px; /* Example minimum height */
+    min-width: 200px; /* Example minimum width */
+}
+
+.chart canvas {
+    width: 100%;  /* Make canvas responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#pitchTable {
+    width: 90%; /* Ensures the table uses the full width of its container */
+    border-collapse: collapse; /* Optional: Collapses border spacing */
+    margin: 10px 0; /* Adds some vertical margin for spacing around the table */
+}
+
+#pitchTable th, #pitchTable td {
+    padding: 4px; /* Adds padding inside each cell */
+    text-align: center; /* Centers the text/data in each cell */
+    border: 1px solid #ddd; /* Adds a light border around each cell for better definition */
+}
+
+#pitchTable th {
+    background-color: #f4f4f4; /* Adds a background color to header cells */
+    color: #333; /* Header text color */
+}
+
+#pitchTable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Zebra striping for rows */
+}
+
+.table-container {
+    max-height: 70vh; /* 70% of the viewport height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+}
+
+table {
+    width: 100%; /* Make the table take up the full width of the container */
+    border-collapse: collapse; /* Optional: for styling */
+}
+
+/* log pitch buttons */
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start of the container */
+    align-items: center; /* Aligns items vertically in the center */
+}
+
+#logPitchButton, #undoButton {
+    margin-right: 10px; /* Adjust spacing between buttons */
+}
+
+#exportCsvButton {
+    margin-left: 50%; /* Pushes the button to the right */
+    /* Reduce margin-left to move it closer to the left buttons */
+}
+
+

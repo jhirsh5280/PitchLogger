@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baseball Pitch Logger</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div id="chartsArea">
+        <div id="chart1" class="chart">
+            <canvas id="pitchUsageCanvas"></canvas>
+        </div>
+        <div id="chart2" class="chart">
+            <canvas id="strikePercentageCanvas"></canvas>
+        </div>
+        <div id="chart3" class="chart">
+            <canvas id="whiffRateCanvas"></canvas>
+        </div>
+        <div id="chart4" class="chart">
+            <canvas id="qualityOfContactCanvas"></canvas>
+        </div>
+        <div id="chart5" class="chart">
+            <canvas id="2of3ChartCanvas"></canvas>
+        </div>
+    </div>
+
+    <div id="pitchLogger">
+        <div id="pitchTypeButtons">
+            <!-- Pitch type buttons -->
+            <button class="pitch-button" data-pitch="Fastball">Fastball</button>
+            <button class="pitch-button" data-pitch="Curveball">Curveball</button>
+            <button class="pitch-button" data-pitch="Slider">Slider</button>
+            <button class="pitch-button" data-pitch="Change Up">Change Up</button>
+            <button class="pitch-button" data-pitch="Other">Other</button>
+            <!-- ... other pitch types -->
+        </div>
+
+        <br>
+
+        <div id="resultButtons">
+            <!-- Result type buttons -->
+            <button class="result-button" data-result="Ball">Ball</button>
+            <button class="result-button" data-result="Called Strike">Called Strike</button>
+            <button class="result-button" data-result="Whiff">Whiff</button>
+            <button class="result-button" data-result="Foul">Foul</button>
+            <button class="result-button" data-result="In Play">In Play</button>
+            <!-- ... other result types -->
+        </div>
+
+        <br>
+
+        <select id="inPlayOutcomeSelector" disabled>
+            <!-- In play outcomes -->
+            <option value="">Select Outcome</option>
+            <option value="1B">1B</option>
+            <option value="2B">2B</option>
+            <option value="3B">3B</option>
+            <option value="HR">HR</option>
+            <option value="FC">Fielders Choice</option>
+            <option value="Out">Out</option>
+            <option value="Double Play">Double Play</option>
+            <option value="Triple Play">Triple Play</option>
+            <option value="Error">Error</option>
+            <option value="HBP">Hit By Pitch</option>
+            <!-- ... other in play outcomes -->
+        </select>
+
+        <select id="typeOfPlaySelector" disable>
+            <option value="">Select Type</option>
+            <option value="FB">Fly Ball</option>
+            <option value="GB">Ground Ball</option>
+            <option value="LD">Line Drive</option>
+        </select>
+
+        <select id="qocSelector" disable>
+            <option value="">Select Contact</option>
+            <option value="Hard">Hard</option>
+            <option value="Regular">Regular</option>
+            <option value="Soft">Soft</option>
+        </select>
+
+        <p>
+            <div class="button-container">
+                <button id="logPitchButton">Log Pitch</button>
+                <button id="undoButton">Undo</button>
+                <button id="exportCsvButton">Export to CSV</button>
+            </div>
+        </p>
+
+        <div class="table-container">
+            <table id="pitchTable">
+                <thead>
+                    <tr>
+                        <th>Batter</th>
+                        <th>#</th>
+                        <th>Pitch Type</th>
+                        <th>Result</th>
+                        <th>Count</th>
+                        <th>Outcome</th>
+                        <th>Type</th>
+                        <th>QoC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be added dynamically here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+<script src="charts.js"></script>
+</body>
+</html>
