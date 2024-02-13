@@ -83,4 +83,43 @@ table {
     /* Reduce margin-left to move it closer to the left buttons */
 }
 
+.pitch-button, .result-button, .action-button {
+    display: inline-flex;
+    justify-content: space-evenly; /* Aligns items to the start */
+    flex-wrap: nowrap; /* Allows items to wrap onto the next line as needed */
+    gap: 5px; /* Creates space between buttons */
+    padding: 5px; /* Adds some padding around the container */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  7px 7px 14px #d0d0d0,
+             -7px -7px 14px #f0f0f0;
+    cursor: pointer;
+}
 
+.pitch-button:hover {
+    background: #bcbec0;
+}
+
+.pitch-button.active, .result-button.active, .action-button.active {
+    border-color: red;
+    color: black; /* Text color */
+    /* other styles for the active state */
+}
+
+.dropdownSelector {
+    background-color: white;
+    color: black;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 12px;
+    border-radius: 8px;
+    border: 2px;
+    border-color: black;
+    background: linear-gradient(145deg, #cacaca, #f0f0f0);
+    box-shadow:  7px 7px 14px #d0d0d0,
+             -7px -7px 14px #f0f0f0;
+    cursor: pointer;
+}

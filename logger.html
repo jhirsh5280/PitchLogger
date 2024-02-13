@@ -52,7 +52,7 @@
 
         <br>
 
-        <select id="inPlayOutcomeSelector" disabled>
+        <select id="inPlayOutcomeSelector" class="dropdownSelector" disabled>
             <!-- In play outcomes -->
             <option value="">Select Outcome</option>
             <option value="1B">1B</option>
@@ -68,14 +68,14 @@
             <!-- ... other in play outcomes -->
         </select>
 
-        <select id="typeOfPlaySelector" disable>
+        <select id="typeOfPlaySelector" class="dropdownSelector" disable>
             <option value="">Select Type</option>
             <option value="FB">Fly Ball</option>
             <option value="GB">Ground Ball</option>
             <option value="LD">Line Drive</option>
         </select>
 
-        <select id="qocSelector" disable>
+        <select id="qocSelector" class="dropdownSelector" disable>
             <option value="">Select Contact</option>
             <option value="Hard">Hard</option>
             <option value="Regular">Regular</option>
@@ -83,10 +83,10 @@
         </select>
 
         <p>
-            <div class="button-container">
-                <button id="logPitchButton">Log Pitch</button>
-                <button id="undoButton">Undo</button>
-                <button id="exportCsvButton">Export to CSV</button>
+            <div class="actionButtons">
+                <button class="action-button" id="logPitchButton">Log Pitch</button>
+                <button class="action-button" id="undoButton">Undo</button>
+                <button class="action-button" id="exportCsvButton">Export to CSV</button>
             </div>
         </p>
 

@@ -432,17 +432,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function highlightButton(selectedButton, buttonGroup) {
+        // Remove 'active' class from all buttons
         resetButtonStyles(buttonGroup);
-        selectedButton.style.backgroundColor = 'black';
-        selectedButton.style.color = 'white';
+        // Add 'active' class to the selected button
+        selectedButton.classList.add('active');
     }
-
+    
     function resetButtonStyles(buttonGroup) {
         buttonGroup.forEach(button => {
-            button.style.backgroundColor = '';
-            button.style.color = '';
+            button.classList.remove('active');
         });
     }
+    
 
     // Download Data
     function exportTableToCSV(filename) {
