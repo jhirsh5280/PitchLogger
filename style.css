@@ -1,12 +1,37 @@
-.container {
-    display: flex; /* Continues to use Flexbox for the layout */
-    flex-direction: row; /* Ensures items are laid out in a row */
-    justify-content: center; /* Centers the items in the container */
-    align-items: flex-start; /* Aligns items to the start of the cross axis */
-    gap: 5px; /* Adds space between the two main areas */
-    padding-left: 5%;
-    padding-right: 5%;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light grey background */
 }
+
+header {
+    background-color: #02366a; /* Dark blue background */
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, #02366a 68%);
+    color: #ffffff; /* White text color */
+    padding: 10px 0;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex; /* Enables Flexbox for this container */
+    justify-content: center; /* Horizontally centers the content */
+    align-items: center; /* Vertically centers the content */
+    height: 50px; /* Adjust height as needed */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+}
+
+.container {
+    display: flex; /* or 'display: grid;' depending on your choice */
+    flex-direction: row-reverse; /* For Flexbox */
+    /* grid-template-columns: 1fr 3fr; For Grid */
+    gap: 10px; /* Reduced gap between the children */
+    max-width: 100%; /* Ensures the container does not exceed the viewport width */
+    padding: 10px 10px; /* Adds padding to the top/bottom and left/right */
+    justify-content: space-between; /* This will ensure there's space between the children */
+    align-items: start; /* Aligns items to the top */
+    margin: 0 auto; /* Centers the container in the viewport */
+    max-width: 1200px; /* Adjust based on the maximum width you desire */
+}
+
 
 #pitchLogger {
     order: 1; /* Ensures that pitchLogger appears on the left */
@@ -14,24 +39,29 @@
 }
 
 #chartsArea {
-    order: 2; /* Ensures that chartsArea appears on the right */
-    flex: 1; /* Allows this area to grow and use available space, adjust as needed */
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Keeps the 2-column layout for charts */
-    gap: 10px; /* Space between charts */
+    grid-template-columns: repeat(2, 1fr); /* Adjust based on your layout needs */
+    gap: 5px 10px; /* Maintains spacing between charts */
+    padding: 10px; /* Adds padding inside the charts area */
+    border: 2px solid #ddd; /* Encapsulates chartsArea with a border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a floating effect */
+    max-width: 90%; /* Adjust based on the desired maximum width within the viewport */
+    max-height: 80vh; /* Adjust based on the desired maximum height within the viewport */
+    overflow: auto; /* Enables scrolling if content exceeds max-height */
+    background-color: #f9f9f9; /* Background color for the charts area */
 }
 
 .chart {
-    border: 1px solid #ddd;
+    flex: 1; /* Allows chart containers to grow and shrink */
+    min-height: 200px; /* Minimum height to ensure charts are visible */
+    height: 100%; /* Ensures chart containers fill the height of #chartsArea */
     padding: 4px;
-    background-color: #f9f9f9;
-    /* Adjust the chart sizing as per the container's size */
-    min-height: 200px; /* Example minimum height */
-    min-width: 200px; /* Example minimum width */
+    box-sizing: border-box; /* Includes padding in the height calculation */
+    margin-bottom: -5px;
 }
 
 .chart canvas {
-    width: 100%;  /* Make canvas responsive */
+    width: auto;  /* Make canvas responsive */
     height: auto; /* Maintain aspect ratio */
 }
 
@@ -65,6 +95,7 @@
 table {
     width: 100%; /* Make the table take up the full width of the container */
     border-collapse: collapse; /* Optional: for styling */
+    font-size: 12px;
 }
 
 /* log pitch buttons */
@@ -79,7 +110,7 @@ table {
 }
 
 #exportCsvButton {
-    margin-left: 50%; /* Pushes the button to the right */
+    margin-left: 40%; /* Pushes the button to the right */
     /* Reduce margin-left to move it closer to the left buttons */
 }
 
@@ -100,6 +131,10 @@ table {
 }
 
 .pitch-button:hover {
+    background: #bcbec0;
+}
+
+.result-button:hover {
     background: #bcbec0;
 }
 

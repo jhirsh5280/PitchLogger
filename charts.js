@@ -15,7 +15,7 @@ const percentageAlongBarPlugin = {
             if (!meta.hidden) {
                 meta.data.forEach(function(element, index) {
                     ctx.fillStyle = 'black';
-                    var fontSize = 10;
+                    var fontSize = 8;
                     ctx.font = Chart.helpers.fontString(fontSize, 'normal', 'Helvetica Neue');
                     ctx.textAlign = 'right';
                     ctx.textBaseline = 'middle';
@@ -101,8 +101,6 @@ function initializePitchUsageChart() {
         },
         options: {
             ...getChartOptions('Pitch Usage Chart'), // Pass the title for this chart 
-            responsive: true,
-            maintainAspectRatio: false,
         },
         plugins: [percentageAlongBarPlugin] // Apply the plugin locally     
     });
@@ -138,8 +136,6 @@ function initializeStrikePercentageChart() {
         },
         options: {
             ...getChartOptions('Strike Percentage'), // Pass the title for this chart
-            responsive: true,
-            maintainAspectRatio: false,
         },
         plugins: [percentageAlongBarPlugin] // Apply the plugin locally
     });
@@ -175,8 +171,6 @@ function initializeWhiffRateChart() {
         },
         options: {
             ...getChartOptions('Whiff Rate Chart'),
-            responsive: true,
-            maintainAspectRatio: false,
         },            
         plugins: [percentageAlongBarPlugin] // Apply the plugin locally
     });
@@ -239,9 +233,6 @@ function initializeQualityOfContactChart() {
             plugins: {
                 // Apply any plugin configurations here, e.g., title, legend adjustments
             },
-            // Other configurations like responsiveness
-            responsive: true,
-            maintainAspectRatio: false,
         },
         plugins: [stackedBarPercentagePlugin]
     });
@@ -283,7 +274,7 @@ function initialize2of3Chart() {
                     display: true,
                     text: 'First 2 of 3', // The title you want to give to the chart
                     font: {
-                        size: 20 // You can adjust the font size as needed
+                        size: 12 // You can adjust the font size as needed
                     }
                 },
                 legend: {
@@ -291,8 +282,6 @@ function initialize2of3Chart() {
                     position: 'top', // Position of the legend, can be 'top', 'bottom', etc.
                 }
             },
-            responsive: true,
-            maintainAspectRatio: false, // Set to false if you want the chart to scale in height as well
         }
     });
 }
@@ -342,11 +331,11 @@ function getChartOptions(titleText) {
                 display: true,
                 text: titleText,
                 padding: {
-                    top: 10,
-                    bottom: 10
+                    top: 5,
+                    bottom: 5
                 },
                 font: {
-                    size: 18
+                    size: 12
                 }
             }
         },
@@ -370,8 +359,8 @@ function getChartOptions(titleText) {
                 beginAtZero: true
             }
         },
-        responsive: true,
         maintainAspectRatio: true,
+        responsive: true,
     };
 }
 
