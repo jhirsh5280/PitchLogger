@@ -238,6 +238,7 @@ function initializeQualityOfContactChart() {
     });
 }
 // Initializes 2of3Chart()
+/*
 function initialize2of3Chart() {
     const ctx2of3 = document.getElementById('2of3ChartCanvas').getContext('2d');
     if (twoOfThreeChart) {
@@ -285,7 +286,7 @@ function initialize2of3Chart() {
         }
     });
 }
-
+*/
 
 
 // Updates the Pitch Usage Chart data
@@ -315,10 +316,12 @@ function updateQualityOfContactChart(hardData, regularData, softData) {
 }
 
 //Update 2of3 Chart Data
+/*
 function update2of3ChartData(winCount, earlyCount, loseCount) {
     twoOfThreeChart.data.datasets[0].data = [winCount, earlyCount, loseCount];
     twoOfThreeChart.update();
 }
+*/
 
 // Returns common chart options to avoid duplication
 function getChartOptions(titleText) {
@@ -370,5 +373,5 @@ function initializeCharts() {
     initializeStrikePercentageChart();
     initializeWhiffRateChart();
     initializeQualityOfContactChart();
-    initialize2of3Chart();
+    //initialize2of3Chart();
 }

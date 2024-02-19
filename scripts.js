@@ -1,3 +1,24 @@
+// Open Tab function --
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Optionally, auto-open the first tab by default
+window.onload = function() {
+    document.getElementsByClassName('tablink')[0].click();
+};
+// Open Tab function   
+
 document.addEventListener('DOMContentLoaded', function () {
     const pitchButtons = document.querySelectorAll('.pitch-button');
     const resultButtons = document.querySelectorAll('.result-button');
@@ -51,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
         highlightButton(this, resultButtons);
         toggleSelectorsBasedOnResult(selectedResult);
     }
-
 
     function logPitch() {
         if (!selectedPitch || !selectedResult) {
@@ -120,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateQualityOfContactChartData(); 
 
         // Calculate and update data for 2of3 Chart
-        update2of3ChartData();
+        //update2of3ChartData();
 
     }
 
@@ -259,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateQualityOfContactChart(hardData, regularData, softData);
     }
 
+    /*
     function calculate2of3Counts() {
         let winCount = 0;
         let earlyCount = 0;
@@ -302,8 +323,9 @@ document.addEventListener('DOMContentLoaded', function () {
         return { winCount, earlyCount, loseCount };
     }
     
-    
+    */
 
+    /*
     function update2of3ChartData() {
         // Directly call calculate2of3Counts here to get the counts
         const { winCount, earlyCount, loseCount } = calculate2of3Counts();
@@ -316,7 +338,7 @@ document.addEventListener('DOMContentLoaded', function () {
             twoOfThreeChart.update();
         }
     }
-    
+    */
     
     function updateCount(result) {
         if (result === 'Ball') {

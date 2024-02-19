@@ -20,25 +20,63 @@ header {
 }
 
 .container {
-    display: flex; /* or 'display: grid;' depending on your choice */
-    flex-direction: row-reverse; /* For Flexbox */
-    /* grid-template-columns: 1fr 3fr; For Grid */
-    gap: 10px; /* Reduced gap between the children */
-    max-width: 100%; /* Ensures the container does not exceed the viewport width */
-    padding: 10px 10px; /* Adds padding to the top/bottom and left/right */
-    justify-content: space-between; /* This will ensure there's space between the children */
-    align-items: start; /* Aligns items to the top */
-    margin: 0 auto; /* Centers the container in the viewport */
-    max-width: 1200px; /* Adjust based on the maximum width you desire */
+    display: flex;
+    flex-direction: row; /* Correct direction for side-by-side */
+    justify-content: space-between; /* This spreads items; might want to adjust based on design */
+    align-items: flex-start; /* Keeps items aligned at the start */
+    gap: 20px; /* Space between elements */
+    padding: 20px; /* Padding inside the container */
+    flex-wrap: nowrap; /* Prevents the items from wrapping */
+    margin: 0 auto; /* Center the container */
+    max-width: 1200px; /* Maximum container width */
 }
-
 
 #pitchLogger {
-    order: 1; /* Ensures that pitchLogger appears on the left */
-    flex: 1; /* Allows this area to grow and use available space, adjust as needed */
+    flex-basis: 40%; /* Example: Adjust according to your needs */
 }
 
-#chartsArea {
+#tabbedArea {
+    flex-basis: 60%;
+}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    font-size: 10px;
+}
+
+/* Style the tab content (and hide it by default) */
+.tabcontent {
+    display: none;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Style the tab content area */
+.tabbed-area {
+    clear: both;
+    width: 100%; /* Adjust if necessary */
+    margin-top: 20px; /* Space between pitch logger and tabbed area */
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center; /* Center the tab buttons */
+    padding-bottom: 10px; /* Space between buttons and content */
+}
+
+.tabcontent {
+    display: none; /* Hide all tab content by default */
+    /* Additional styles */
+}
+
+#Charts {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Adjust based on your layout needs */
     gap: 5px 10px; /* Maintains spacing between charts */
@@ -52,17 +90,14 @@ header {
 }
 
 .chart {
-    flex: 1; /* Allows chart containers to grow and shrink */
-    min-height: 200px; /* Minimum height to ensure charts are visible */
-    height: 100%; /* Ensures chart containers fill the height of #chartsArea */
-    padding: 4px;
-    box-sizing: border-box; /* Includes padding in the height calculation */
-    margin-bottom: -5px;
+    height: auto;
+    float: left;
 }
 
-.chart canvas {
-    width: auto;  /* Make canvas responsive */
-    height: auto; /* Maintain aspect ratio */
+@media (max-width: 600px) { /* Adjust breakpoint as needed */
+    #Charts {
+        grid-template-columns: 1fr; /* Switches to a single column layout */
+    }
 }
 
 #pitchTable {
